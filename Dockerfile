@@ -16,8 +16,8 @@
 # TODO - Currently exposed ports are hard-coded to use values that are in the jmeter.properties.
 #        It would be nice to be able to parameterize the port numbers.
 #
-FROM ssankara/jmeter-base
-MAINTAINER Sri Sankaran sri@redhat.com
+FROM santosharakere/jmeter-base
+MAINTAINER Santosh Marigowda santosharakere@gmail.com 
 
 ADD jmeter.properties /var/lib/apache-jmeter-$JMETER_VERSION/bin/
 
@@ -29,4 +29,4 @@ VOLUME [ "/input-data" ]
 EXPOSE 1099 60000
 
 # Run jmeter-server 
-ENTRYPOINT [ "/var/lib/apache-jmeter-2.11/bin/jmeter-server" ]
+ENTRYPOINT [ "/var/lib/apache-jmeter-2.12/bin/jmeter-server" ]
