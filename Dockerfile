@@ -26,7 +26,7 @@ VOLUME [ "/logs" ]
 VOLUME [ "/input-data" ]
 
 # Expose jmeter-server's port (values dicated by those specified in jmeter.properties.
-EXPOSE 1099 60000
+# EXPOSE 1099 60000
 
 # Run jmeter-server 
-ENTRYPOINT [ "/var/lib/apache-jmeter-2.12/bin/jmeter-server" ]
+ENTRYPOINT [ "/var/lib/apache-jmeter-2.13/bin/jmeter-server" ]
