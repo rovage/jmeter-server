@@ -1,2 +1,2 @@
 How to build
-docker build -t santosharakere/jmeter-server .
+docker build -t soumentrivedi/jmeter-server .

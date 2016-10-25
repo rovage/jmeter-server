@@ -9,17 +9,14 @@
 #             -v /some/other/local/path:/input-data \
 #             ssankara/jmeter-server
 #
-# TODO - Parameterize jmeter version in the ENTRYPOINT.
-#        Don't know how at the moment.  Cannot seem to use $VAR.  It is not converted; probably
-#        because it is in a quoted string.
 #
 # TODO - Currently exposed ports are hard-coded to use values that are in the jmeter.properties.
 #        It would be nice to be able to parameterize the port numbers.
 #
-FROM santosharakere/jmeter-base
-MAINTAINER Santosh Marigowda santosharakere@gmail.com 
+FROM soumentrivedi/jmeter-base
+MAINTAINER Souman Trivedi soumen.trivedi@gmail.com 
 
-ADD jmeter.properties /var/lib/apache-jmeter-$JMETER_VERSION/bin/
+ADD jmeter.properties /var/lib/apache-jmeter/bin/
 
 # Expose access to logs & data files
 VOLUME [ "/logs" ]
@@ -29,4 +26,4 @@ VOLUME [ "/input-data" ]
 # EXPOSE 1099 60000
 
 # Run jmeter-server 
-ENTRYPOINT [ "/var/lib/apache-jmeter-2.13/bin/jmeter-server" ]
+ENTRYPOINT [ "/var/lib/apache-jmeter/bin/jmeter-server" ]
